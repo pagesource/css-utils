@@ -1,2 +1,2 @@
-# flex-box-grid
+# Responisve flex grid
 A responsive Flex box based grid Layouting module with SCSS and CSS3
