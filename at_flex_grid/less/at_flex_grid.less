@@ -1,0 +1,129 @@
+@horizontal-spacing-section :0; // horizontal spacing between elements side by side, e.g. between two buttons on the same row
+@vertical-spacing-section :20px; // vertical spacing between elements side by side, e.g. between two buttons on the same row
+.sn-flex {
+  display: flex;
+  >* {
+    flex: 1 1 auto;
+    margin-left: @horizontal-spacing-section;
+    margin-bottom: @vertical-spacing-section;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  // overrite flex on samll screen
+  &.flex-stack-mobile, &.flex-1, &.flex-1-1-2, &.flex-1-2-2, &.flex-1-2-3, &.flex-1-2-4, &.flex-1-1-3, &.flex-1-3-4, &.flex-1-3-3, &.flex-1-1-4, &.flex-1-4-4 {
+    display: block;
+    > * {
+      margin-left: 0;
+    }
+  }
+  // justify-content
+  &.item-justify-left {
+    justify-content: flex-start;
+  }
+  &.item-justify-right {
+    justify-content: flex-end;
+  }
+  &.item-justify-center {
+    justify-content: center;
+  }
+  &.item-justify-between {
+    justify-content: space-between;
+  }
+  &.item-justify-around {
+    justify-content: space-around;
+  }
+  // Align Items
+  &.item-align-start {
+    align-items: flex-start;
+  }
+  &.item-align-end {
+    align-items: flex-end;
+  }
+  &.item-align-center {
+    align-items: center;
+  }
+  &.item-align-between {
+    align-items: space-between;
+  }
+  &.item-align-around {
+    align-items: space-around;
+  }
+  &.inline {
+    display: inline-flex;
+  }
+  .no-grow{
+    flex-grow: 0;
+  }
+  // overrite column in a flex layout
+  &.grid-flex-overwrite {
+    flex-wrap: wrap;
+    .flex-overwrite {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-left: 0;
+      & + * {
+        margin-left: 0;
+      }
+    }
+  }
+  // column will expand as per the content within
+  &.flex-none {
+    >* {
+      flex: 0 0 auto;
+    }
+  }
+  &.no-vertical-margin {
+    > * {
+      &:nth-child(even),
+      &:nth-child(odd) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  // no margin class
+  &.grid-flex-no-margin {
+    > * {
+      &:nth-child(even),
+      &:nth-child(odd) {
+        margin-left: 0 !important;
+      }
+    }
+  }
+  .sn-flex {
+    margin-bottom: 0;
+  }
+}
+
+// class for snflex, jc: justify-center, ac: align-center
+.sn-flex-jc-ac {
+  .sn-flex;
+  .item-justify-center;
+  .item-align-center;
+}
+
+// class for snflex, jb: justify-between, ac: align-center
+.sn-flex-jb-ac {
+  .sn-flex;
+  .item-justify-between;
+  .item-align-center;
+}
+
+// sn-flex helper classes
+.flex-stack-helper {
+  display: block;
+  > * {
+    margin-left: 0;
+    margin-bottom: @horizontal-spacing-section;
+  }
+}
+
+.flex-stack-helper-overwrite {
+  display: flex;
+  > * {
+    margin-left: @horizontal-spacing-section;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
