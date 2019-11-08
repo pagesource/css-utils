@@ -1,0 +1,16 @@
+{
+  "name": "flex-grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-grid": "lessc ./at_flex_grid/less/flex_grid.less > grid_less.css",
+    "node-sass": "copy con grid_sass.css | node-sass --output-style compressed ./at_flex_grid/sass/flex_grid.scss > grid_sass.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "less": "^3.10.3",
+    "node-sass": "^4.12.0"
+  }
+}
